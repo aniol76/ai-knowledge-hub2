@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Knowledge Hub | Baza Wiedzy E-commerce</title>
+    <style>
+        :root {
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+            --accent-color: #3498db;
+            --accent-light: #e8f4fd;
+            --success-color: #27ae60;
+            --success-light: #eafaf1;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+
+        header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .filter-wrapper {
+            position: sticky;
+            top: 0;
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+            z-index: 100;
+            padding: 15px 0;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        .filter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            background-color: var(--bg-color);
+            border: 1px solid #dcdde1;
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            background-color: #e1e8ed;
+        }
+
+        .filter-btn.active {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.4);
+        }
+
+        .filter-btn.btn-all {
+            background-color: #7f8c8d;
+            color: white;
+            border-color: #7f8c8d;
+        }
+        .filter-btn.btn-all.active {
+            background-color: #2c3e50;
+            border-color: #2c3e50;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .app-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border: 1px solid #e1e8ed;
+        }
+
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 2px solid #f5f7fa;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .app-title {
+            margin: 0;
+            font-size: 1.6rem;
+            color: #1e3c72;
+        }
+
+        .app-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .app-link:hover {
+            text-decoration: underline;
+        }
+
+        .app-description {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        details.features-details {
+            border: 1px solid #eaeef2;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        summary.features-summary {
+            padding: 10px 15px;
+            font-weight: 600;
+            color: #475569;
+            cursor: pointer;
+            outline: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            background-color: #f8fafc;
+            font-size: 0.95rem;
+        }
+
+        summary.features-summary::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            transition: transform 0.2s ease;
+            font-weight: bold;
+        }
+
+        details[open] summary.features-summary::after {
+            content: '−';
+        }
+
+        summary.features-summary:hover {
+            background-color: #f1f5f9;
+        }
+
+        .features-content {
+            padding: 15px 20px;
+            border-top: 1px solid #eaeef2;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .features-list, .video-list {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .features-list li, .video-list li {
+            margin-bottom: 8px;
+            color: #34495e;
+            font-size: 0.95rem;
+        }
+
+        .video-list a {
+            color: #c0392b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .video-list a:hover {
+            text-decoration: underline;
+        }
+
+        .use-cases-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .role-row {
+            background-color: #fafbfc;
+            border: 1px solid #eaeef2;
+            border-radius: 8px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .role-name {
+            font-weight: bold;
+            color: #34495e;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .role-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .role-row.highlighted {
+            background-color: var(--success-light);
+            border-color: var(--success-color);
+            box-shadow: 0 2px 8px rgba(39, 174, 96, 0.1);
+        }
+        
+        .role-row.highlighted .role-name {
+            color: var(--success-color);
+        }
+
+        .role-row.highlighted .role-desc {
+            color: #1e272e;
+        }
+
+        .hidden-role {
+            display: none !important;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background-color: #fff;
+            border-top: 1px solid #e1e8ed;
+            margin-top: 50px;
+        }
+
+        #loading {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AI Knowledge Hub</h1>
+        <p>Dynamiczne Repozytorium Wiedzy Zespołu E-commerce</p>
+    </header>
+
+    <div class="filter-wrapper">
+        <div class="filter-container">
+            <button class="filter-btn btn-all active" onclick="filterRole('all', this)">Pokaż wszystko</button>
+            <button class="filter-btn" onclick="filterRole('kam', this)">Key Account Manager</button>
+            <button class="filter-btn" onclick="filterRole('kae', this)">Key Account Executive</button>
+            <button class="filter-btn" onclick="filterRole('merch', this)">E-commerce Merchandising Specialist</button>
+            <button class="filter-btn" onclick="filterRole('spec', this)">E-commerce Specialist</button>
+            <button class="filter-btn" onclick="filterRole('analyst', this)">E-commerce Data Analyst</button>
+            <button class="filter-btn" onclick="filterRole('designer', this)">Graphic Designer</button>
+            <button class="filter-btn" onclick="filterRole('b2b-support', this)">B2B Support Specialist</button>
+        </div>
+    </div>
+
+    <main id="app-container">
+        <div id="loading">Ładowanie bazy wiedzy AI...</div>
+    </main>
+
+    <footer>
+        <p>AI Knowledge Hub – Stworzone przez Ambasadora Zmian AI dla Zespołu E-commerce | 2026</p>
+    </footer>
+
+    <script>
+        let currentFilter = 'all';
+
+        const roleNames = {
+            "kam": "Key Account Manager",
+            "kae": "Key Account Executive",
+            "merch": "E-commerce Merchandising Specialist",
+            "spec": "E-commerce Specialist",
+            "analyst": "E-commerce Data Analyst",
+            "designer": "Graphic Designer",
+            "b2b-support": "B2B Support Specialist"
+        };
+
+        async function loadArchive() {
+            const container = document.getElementById('app-container');
+            try {
+                const response = await fetch('data/apps.json');
+                const appFiles = await response.json();
+                
+                container.innerHTML = '';
+                let loadedAny = false;
+
+                for (const file of appFiles) {
+                    try {
+                        const appResponse = await fetch(`data/${file}`);
+                        if (!appResponse.ok) throw new Error(`Nie znaleziono pliku: ${file}`);
+                        
+                        const app = await appResponse.json();
+                        const card = createAppCard(app);
+                        container.appendChild(card);
+                        loadedAny = true;
+                    } catch (fileError) {
+                        console.warn(`Pominięto plik: ${file} z powodu błędu składni lub braku pliku.`, fileError);
+                    }
+                }
+
+                if (!loadedAny) {
+                    container.innerHTML = `<div id="loading">Folder 'data' jest dostępny, ale nie załadowano żadnej aplikacji. Sprawdź plik apps.json.</div>`;
+                }
+
+            } catch (error) {
+                container.innerHTML = `<div id="loading" style="color: #c0392b;">Błąd połączenia z bazą danych. Upewnij się, że lokalny serwer jest włączony (komenda: npx serve), a plik apps.json znajduje się w folderze data.</div>`;
+                console.error("Główny błąd ładowania:", error);
+            }
+        }
+
+        function createAppCard(app) {
+            const article = document.createElement('article');
+            article.className = 'app-card';
+
+            let featuresHtml = '';
+            if (app.features && Array.isArray(app.features)) {
+                app.features.forEach(f => {
+                    let cleanText = f.replace(/\*\*/g, '').trim();
+                    let separatorIndex = cleanText.search(/[-–—]/);
+                    
+                    if (separatorIndex !== -1) {
+                        let title = cleanText.substring(0, separatorIndex).trim();
+                        let desc = cleanText.substring(separatorIndex + 1).trim();
+                        featuresHtml += `<li><strong>${title}</strong> – ${desc}</li>`;
+                    } else {
+                        featuresHtml += `<li>${cleanText}</li>`;
+                    }
+                });
+            }
+
+            let useCasesHtml = '';
+            if (app.use_cases) {
+                for (const [roleCode, desc] of Object.entries(app.use_cases)) {
+                    useCasesHtml += `
+                        <div class="role-row" data-role="${roleCode}">
+                            <span class="role-name">${roleNames[roleCode] || roleCode}:</span>
+                            <span class="role-desc">${desc}</span>
+                        </div>
+                    `;
+                }
+            }
+
+            let videosHtml = '';
+            if (app.videos && Array.isArray(app.videos)) {
+                app.videos.forEach(v => {
+                    videosHtml += `<li><a href="${v.url}" target="_blank">${v.title}</a></li>`;
+                });
+            }
+
+            article.innerHTML = `
+                <div class="app-header">
+                    <h2 class="app-title">${app.title || 'Brak nazwy'}</h2>
+                    <a href="${app.url || '#'}" target="_blank" class="app-link">${app.url || ''}</a>
+                </div>
+                <p class="app-description">${app.description || ''}</p>
+                
+                <details class="features-details">
+                    <summary class="features-summary">Najważniejsze cechy i funkcje aplikacji</summary>
+                    <div class="features-content">
+                        <ul class="features-list">${featuresHtml || '<li>Brak danych</li>'}</ul>
+                    </div>
+                </details>
+                
+                <h3>Zastosowanie w zespole E-commerce</h3>
+                <div class="use-cases-container">${useCasesHtml || 'Brak zdefiniowanych ról.'}</div>
+                
+                <h3>Przydatne materiały wideo (YouTube)</h3>
+                <ul class="video-list">${videosHtml || '<li>Brak materiałów wideo.</li>'}</ul>
+            `;
+
+            updateCardFiltering(article);
+            return article;
+        }
+
+        function filterRole(roleCode, buttonElement) {
+            currentFilter = roleCode;
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttonElement.classList.add('active');
+
+            const allCards = document.querySelectorAll('.app-card');
+            allCards.forEach(card => updateCardFiltering(card));
+        }
+
+        function updateCardFiltering(cardElement) {
+            const rows = cardElement.querySelectorAll('.role-row');
+            rows.forEach(row => {
+                const rowRole = row.getAttribute('data-role');
+                if (currentFilter === 'all') {
+                    row.classList.remove('hidden-role', 'highlighted');
+                } else {
+                    if (rowRole === currentFilter) {
+                        row.classList.remove('hidden-role');
+                        row.classList.add('highlighted');
+                    } else {
+                        row.classList.add('hidden-role');
+                        row.classList.remove('highlighted');
+                    }
+                }
+            });
+        }
+
+        window.onload = loadArchive;
+    </script>
+</body>
+</html>

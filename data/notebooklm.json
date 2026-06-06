@@ -1,0 +1,31 @@
+{
+  "title": "Google NotebookLM",
+  "url": "https://notebooklm.google",
+  "description": "Zautomatyzowany asystent badawczy i spersonalizowany partner myślowy oparty na zaawansowanym modelu językowym Gemini 3.1 Pro. Narzędzie pozwala na wgrywanie różnorodnych plików źródłowych i prowadzenie interaktywnego czatu w 100% opartego wyłącznie na dostarczonych materiałach. Dzięki temu eliminuje problem halucynacji AI, dostarczając precyzyjne odpowiedzi z bezpośrednimi cytatami i odnośnikami źródłowymi.",
+  "features": [
+    "**Kontekst do 1 miliona tokenów** - Obsługa gigantycznej przestrzeni danych wejściowych w każdym planie, co pozwala na jednoczesną analizę setek tysięcy słów i dziesiątek obszernych dokumentów.",
+    "**Pełne ugruntowanie w źródłach (Grounded QA)** - Odpowiedzi generowane przez czat opierają się wyłącznie na przesłanych plikach, drastycznie minimalizując ryzyko zmyślania informacji.",
+    "**Multimodalność wejściowa** - Bezpośrednia integracja z Google Drive oraz obsługa plików PDF, DOCX, Google Sheets, EPUB, materiałów audio (MP3, WAV), wideo (MP4) oraz linków YouTube i URL.",
+    "**Audio Overviews (Generowanie podcastów)** - Automatyczne przekształcanie suchych danych tekstowych w angażującą dyskusję audio prowadzoną przez dwóch syntetycznych prezenterów.",
+    "**Cinematic Video Overviews** - Nowość pozwalająca generować immersyjne materiały wideo z płynnymi animacjami i bogatą oprawą wizualną na bazie dostarczonych tekstów.",
+    "**Wielofunkcyjny Panel Studio** - Narzędzie do błyskawicznego tworzenia notatek biznesowych, przewodników, osi czasu, spisów FAQ oraz dynamicznych tabel danych.",
+    "**Generator Infografik (10 stylów wizualnych)** - Opcja ręcznego lub automatycznego tworzenia infografik w stylach takich jak Bento Grid, Professional, Editorial czy Kawaii z wykorzystaniem Nano Banana Pro.",
+    "**Generowanie i edycja prezentacji (Pencil UI)** - Tworzenie kompletnych slajdów na bazie dokumentów oraz ich punktowa, tekstowa edycja (np. poprawa konkretnego slajdu) z eksportem do formatu PPTX.",
+    "**Tworzenie inteligentnych artefaktów w czacie** - Możliwość bezpośredniego zlecenia w oknie rozmowy transformacji wątku dyskusji w spersonalizowany raport, mapę myśli czy skrypt.",
+    "**Prywatność i bezpieczeństwo sesji** - Historia czatu wewnątrz współdzielonych projektów pozostaje całkowicie niewidoczna dla innych użytkowników i jest automatycznie zapisywana na osobistym koncie."
+  ],
+  "use_cases": {
+    "kam": "Błyskawiczna analiza rozproszonej historii korespondencji, kontraktów i raportów handlowych kluczowych klientów w celu wyciągnięcia priorytetowych wniosków przed spotkaniami rocznymi.",
+    "kae": "Mapowanie celów strategicznych i potrzeb nowych kontrahentów poprzez wgrywanie wielostronicowych strategii biznesowych oraz zapytań ofertowych (RFP) do jednego projektu.",
+    "merch": "Przetwarzanie rozbudowanych arkuszy specyfikacji technicznych od dostawców i hurtowników w celu automatycznego wygenerowania spójnych tabel cech produktów oraz list unikalnych wyróżników (USP).",
+    "spec": "Masowe tworzenie bazy wiedzy na temat wewnętrznych procedur e-commerce, regulaminów promocji oraz wytycznych logistycznych (SLA) z opcją natychmiastowego przeszukiwania.",
+    "analyst": "Łączenie ustrukturyzowanych danych z Google Sheets z nieustrukturyzowanymi plikami PDF z raportów rynkowych w celu znalezienia korelacji trendów sprzedażowych z zachowaniami konsumentów.",
+    "designer": "Konwertowanie briefów kreatywnych i tekstowych wytycznych od marek na czytelne mapy myśli oraz generowanie automatycznych prezentacji (PPTX) z zarysowanym układem treści (layoutem) dla projektów UI/UX.",
+    "b2b-support": "Tworzenie natychmiastowych skryptów odpowiedzi i bazy FAQ dla konsultantów na podstawie wewnętrznych instrukcji technicznych oraz specyfikacji rzadkich produktów B2B."
+  },
+  "videos": [
+    {"title": "NotebookLM's New Use Cases Are INSANE | 10 Game-Changing AI Workflows (2026)", "url": "https://www.youtube.com/watch?v=t9EomoRWlFw"},
+    {"title": "How To Master NotebookLM in 2026 (Free Course)", "url": "https://www.youtube.com/watch?v=b2fGNHPlUGA"},
+    {"title": "How to Use Google NotebookLM (Full Tutorial)", "url": "https://www.youtube.com/watch?v=uSVBfyHBiDU"}
+  ]
+}

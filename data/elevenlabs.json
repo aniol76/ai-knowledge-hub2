@@ -1,0 +1,29 @@
+{
+  "title": "ElevenLabs",
+  "url": "https://elevenlabs.io",
+  "description": "Wiodąca platforma AI audio specjalizująca się w najbardziej realistycznym generowaniu mowy (Text-to-Speech), klonowaniu głosu oraz efektach dźwiękowych. Narzędzie wykorzystuje zaawansowane modele deep learning, które idealnie oddają ludzkie emocje, intonację, pauzy oraz kontekst wypowiedzi. Pozwala na błyskawiczne tworzenie wielojęzycznych ścieżek lektorskich oraz lokalizację wideo przy zachowaniu oryginalnego brzmienia głosu mówcy.",
+  "features": [
+    "**Generowanie mowy Text-to-Speech** - Przekształcanie tekstu na ultra-realistyczny dźwięk o studyjnej jakości z pełną kontrolą nad emocjami, tempem i akcentowaniem.",
+    "**Instant & Professional Voice Cloning** - Klonowanie własnego głosu na podstawie krótkiej próbki audio lub tworzenie cyfrowego bliźniaka o najwyższej wierności (Professional Voice Cloning) do masowej produkcji.",
+    "**Voice Design** - Tworzenie zupełnie nowych, unikalnych syntetycznych głosów od zera poprzez określenie płci, wieku, akcentu oraz siły ekspresji.",
+    "**AI Dubbing & Video Localization** - Automatyczne tłumaczenie materiałów wideo na ponad 30 języków z unikalną funkcją zachowania oryginalnego głosu i tonu native speakera.",
+    "**Speech-to-Speech** - Modulacja i transformacja jednego głosu w inny z zachowaniem precyzyjnej ekspresji, emocji i dynamiki oryginalnego nagrania audio.",
+    "**Sound Effects (SFX) Generator** - Generowanie wysokiej jakości efektów dźwiękowych, odgłosów tła i sampli na podstawie prostego opisu tekstowego (Prompt-to-SFX).",
+    "**Audio Native / Voice Overlays** - Automatyczne tworzenie wersji audio dla artykułów blogowych, stron produktowych i newsów za pomocą dedykowanych widżetów.",
+    "**Projects (Long-form Audio)** - Zaawansowany edytor do produkcji wielostronicowych audiobooków, długich podcastów czy prezentacji z precyzyjnym podziałem na role i akapity."
+  ],
+  "use_cases": {
+    "kam": "Tworzenie spersonalizowanych wiadomości wideo i audio dla kluczowych klientów (VIP), gdzie lektor zwraca się do nich po imieniu, omawiając dedykowane warunki współpracy.",
+    "kae": "Masowe generowanie unikalnych, spersonalizowanych komunikatów głosowych (cold calling/cold mailing audio) dopasowanych do konkretnych branż i profili pozyskiwanych partnerów.",
+    "merch": "Automatyczne tworzenie dynamicznych recenzji audio i narracji głosowych do wideo produktowych na landing page, podnoszących konwersję w sklepie internetowym.",
+    "spec": "Szybkie wdrażanie podcastów markowych oraz automatyczne generowanie wersji audio (audiobook/lektor) dla wszystkich wpisów blogowych i poradników na platformie e-commerce.",
+    "analyst": "Automatyzacja generowania codziennych lub tygodniowych podsumowań raportów sprzedażowych w formie syntezowanych komunikatów głosowych (audio briefingów) dla managementu.",
+    "designer": "Błyskawiczne generowanie unikalnych efektów dźwiękowych (SFX) do animacji, mikrointerakcji UI/UX, filmów reklamowych na social media oraz podkładanie realistycznych głosów do makiet wideo bez angażowania studiów nagraniowych.",
+    "b2b-support": "Tworzenie wielojęzycznych, idealnie brzmiących instrukcji głosowych (samouczków), komunikatów do centrali telefonicznych (IVR) oraz bazy wiedzy audio dla klientów biznesowych na rynkach zagranicznych."
+  },
+  "videos": [
+    {"title": "ElevenLabs Tutorial for Beginners (How to Use ElevenLabs AI)", "url": "https://www.youtube.com/watch?v=A_2C9qIuPvs"},
+    {"title": "How to Clone Your Voice with ElevenLabs Professional Voice Cloning", "url": "https://www.youtube.com/watch?v=84Eszh3fGg4"},
+    {"title": "ElevenLabs AI Sound Effects & Speech-to-Speech Masterclass", "url": "https://www.youtube.com/watch?v=uTscM6j54m8"}
+  ]
+}
